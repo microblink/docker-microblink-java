@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM alpine:3.10
 
 LABEL maintainer="Matija Stepanic <matija.stepanic@microblink.com>" version="3.0"
 
