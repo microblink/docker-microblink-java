@@ -1,6 +1,6 @@
 FROM alpine:3.10
 
-LABEL maintainer="Matija Stepanic <matija.stepanic@microblink.com>" version="3.0"
+LABEL maintainer="Matija Stepanic <matija.stepanic@microblink.com>" version="1.0"
 
 # 1. where to store original OpenJDK
 ENV JAVA_HOME_JDK /opt/openjdk-13
