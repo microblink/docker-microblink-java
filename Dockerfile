@@ -1,6 +1,6 @@
 FROM alpine:3.10
 
-LABEL maintainer="Matija Stepanic <matija.stepanic@microblink.com>" version="1.0"
+LABEL maintainer="Matija Stepanic <matija.stepanic@microblink.com>" version="1.1"
 
 # 1. where to store original OpenJDK
 ENV JAVA_HOME_JDK /opt/openjdk-13
@@ -10,12 +10,13 @@ ENV JAVA_HOME_JRE /opt/openjre-13
 # Expose original OpenJDK and and custom Java runtime to the shell
 ENV PATH $JAVA_HOME_JDK/bin:$JAVA_HOME_JRE/bin:$PATH
 
+# Ref: https://github.com/docker-library/openjdk/blob/master/13/jdk/alpine/Dockerfile
 # https://jdk.java.net/
-ENV JAVA_VERSION 13-ea+19
-ENV JAVA_URL https://download.java.net/java/early_access/alpine/19/binaries/openjdk-13-ea+19_linux-x64-musl_bin.tar.gz
-ENV JAVA_SHA256 010ea985fba7e3d89a9170545c4e697da983cffc442b84e65dba3baa771299a5
-
+ENV JAVA_VERSION 13-ea+27
+ENV JAVA_URL https://download.java.net/java/early_access/alpine/27/binaries/openjdk-13-ea+27_linux-x64-musl_bin.tar.gz
+ENV JAVA_SHA256 c733a5e2833f3942e7c9be546a6a4d0951e58f09d39adc0f856820d810f9d910
 # "For Alpine Linux, builds are produced on a reduced schedule and may not be in sync with the other platforms."
+
 RUN set -eux; \
 	\
 	wget -O /openjdk.tgz "$JAVA_URL"; \
