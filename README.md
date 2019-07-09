@@ -4,7 +4,7 @@ This is the optimal Java runtime built from OpenJDK and based on Alpine Linux.
 
 ## Description
 
-With the OpenJDK it is available the whole Java Development Kit, but to reduce the runtime size, this runtime is built with `jlink` which keeps only required parts of the OpenJDK for running Java applications (just for running not for compiling), for the development you should still use whole JDK. 
+With the OpenJDK it is available the whole Java Development Kit, but to reduce the runtime size, this runtime is built with `jlink` which keeps only required parts of the OpenJDK for running Java applications (just for running not for compiling), for the development you should still use the whole JDK. 
 
 ## Compare Sizes
 
