@@ -1,20 +1,20 @@
-FROM alpine:3.10
+FROM alpine:3.10.3
 
-LABEL maintainer="Matija Stepanic <matija.stepanic@microblink.com>" version="1.1"
+LABEL maintainer="Matija Stepanic <matija.stepanic@microblink.com>" version="1.2"
 
 # 1. where to store original OpenJDK
-ENV JAVA_HOME_JDK /opt/openjdk-13
+ENV JAVA_HOME_JDK /opt/openjdk-14
 # 2. where to store generated custom Java runtime from original OpenJDK
-ENV JAVA_HOME_JRE /opt/openjre-13
+ENV JAVA_HOME_JRE /opt/openjre-14
 
 # Expose original OpenJDK and and custom Java runtime to the shell
 ENV PATH $JAVA_HOME_JDK/bin:$JAVA_HOME_JRE/bin:$PATH
 
-# Ref: https://github.com/docker-library/openjdk/blob/master/13/jdk/alpine/Dockerfile
+# Ref: https://github.com/docker-library/openjdk/blob/master/14/jdk/alpine/Dockerfile
 # https://jdk.java.net/
-ENV JAVA_VERSION 13-ea+27
-ENV JAVA_URL https://download.java.net/java/early_access/alpine/27/binaries/openjdk-13-ea+27_linux-x64-musl_bin.tar.gz
-ENV JAVA_SHA256 c733a5e2833f3942e7c9be546a6a4d0951e58f09d39adc0f856820d810f9d910
+ENV JAVA_VERSION 14-ea+15
+ENV JAVA_URL https://download.java.net/java/early_access/alpine/15/binaries/openjdk-14-ea+15_linux-x64-musl_bin.tar.gz
+ENV JAVA_SHA256 76091da1b6ed29788f0cf85454d23900a4134286e5feb571247e5861f618d3cd
 # "For Alpine Linux, builds are produced on a reduced schedule and may not be in sync with the other platforms."
 
 RUN set -eux; \
